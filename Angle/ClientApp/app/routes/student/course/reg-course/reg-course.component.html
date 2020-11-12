@@ -1,0 +1,43 @@
+<div  class="row">
+
+  <div class="col-md-8 offset-2" *ngIf="courses.length>0; else notFound">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Course ID</th>
+      <th scope="col">Teacher Name</th>
+
+      <th scope="col">Course Name</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Fees</th>
+      <th scope="col">Remaining Fees</th>
+
+      <th scope="col">Course Detail</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let course of courses">
+
+      <td>{{course.cid}}</td>
+      <td>{{course.teacherName}}</td>
+      <td>{{course.cName}}</td>
+      <td>{{course.duration}}</td>
+      <td>{{course.feesCourse}}</td>
+      <td>{{course.feesStudent}}</td>
+
+      <td> <a class="btn btn-info" [routerLink]="['/student/course/content/' + course.cid]">Contents</a>
+
+      </tr>
+  </tbody>
+</table>
+</div>
+<ng-template #notFound>
+
+  <div class="alert alert-danger" role="alert">
+Not Found!
+  </div>
+
+</ng-template>
+</div>
+

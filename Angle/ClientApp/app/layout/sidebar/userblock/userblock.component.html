@@ -1,0 +1,15 @@
+<div class="item user-block" *ngIf="(loginStatus$ | async) as LoginStatus">
+    <!-- User picture-->
+    <div class="user-block-picture">
+        <div class="user-block-status">
+            <img class="img-thumbnail rounded-circle" [src]="user.picture" alt="Avatar" />
+            <div class="circle bg-success circle-lg"></div>
+        </div>
+    </div>
+        <!-- Name and Job-->
+        <div class="user-block-info">
+            <span class="user-block-name text-bold" *ngIf="(username$ | async) as UserName">{{ 'sidebar.WELCOME' | translate }}  {{UserName}}</span>
+            <span class="user-block-role" *ngIf="(userRole$ | async) as userRole">{{userRole}}</span>
+                <a class="text-bold btn btn-danger text-white" (click)="onLogOut()">Log Out</a>
+        </div>
+</div>

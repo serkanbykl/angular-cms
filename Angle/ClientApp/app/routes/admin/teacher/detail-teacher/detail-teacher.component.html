@@ -1,0 +1,81 @@
+<!-- START row-->
+<div class="row" *ngIf="teacher">
+  <div class="col-md-6">
+      <!-- START card-->
+      <div class="card card-default">
+          <div class="card-header">Update Form</div>
+          <div class="card-body">
+              <form role="form" [formGroup]="updateForm" (ngSubmit)="onUpdate($event, updateForm.value)">
+
+                <div class="form-group"> 
+                  <input formControlName="id" class="form-control" type="text" required readonly hidden>
+                  </div>
+
+                  <div class="form-group">
+                      <label>Teacher Name</label>
+                      <input class="form-control" type="text" formControlName="name" />
+                      <div class="text-danger" *ngIf="updateForm.controls['name'].hasError('required') && (updateForm.controls['name'].dirty || updateForm.controls['name'].touched)">This field is required</div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label>Teacher Username</label>
+                    <input class="form-control" type="text" formControlName="username" />
+                    <div class="text-danger" *ngIf="updateForm.controls['username'].hasError('required') && (updateForm.controls['username'].dirty || updateForm.controls['username'].touched)">This field is required</div>
+                </div>
+
+                <div class="form-group">
+                  <label>Teacher Password</label>
+                  <input class="form-control" type="text" formControlName="password" />
+                  <div class="text-danger" *ngIf="updateForm.controls['password'].hasError('required') && (updateForm.controls['password'].dirty || updateForm.controls['password'].touched)">This field is required</div>
+              </div>
+              
+                <div class="form-group">
+                  <label>Teacher Education Detail</label>
+                  <input class="form-control" type="text" formControlName="educationDetail" />
+              </div>
+
+              <div class="form-group">
+                <label>Teacher Personal Detail</label>
+                <input class="form-control" type="text" formControlName="personalDetail" />
+            </div>
+
+
+                <button type="submit" class="btn btn-sm btn-secondary"  [disabled]="updateForm.invalid">Update</button>
+              </form>
+              
+              <ul class="list-group mt-4" style="border:2px solid gray;" *ngIf="upMessage">
+                <li class="list-group-item">{{upMessage}}</li>
+            </ul>
+          </div>
+      </div>
+      <!-- END card-->
+  </div>
+  <div class="col-md-6">
+      <!-- START card-->
+      <div class="card card-default">
+          <div class="card-header">Delete form</div>
+          <div class="card-body">
+              <form class="form-horizontal" [formGroup]="deleteForm" (ngSubmit)="onDelete(deleteForm.value)">
+                <div class="form-group"> 
+                  <input formControlName="id" class="form-control" type="text" required readonly hidden>
+                  </div>
+                  <div class="form-group">
+                    <input type="checkbox" type="checkbox" formControlName="check" id="check" required style="margin-right:5px;"/>
+                    <label> Confirm</label>
+
+                  </div>
+
+                  <button type="submit" class="btn btn-sm btn-secondary"  [disabled]="deleteForm.invalid">Delete</button>
+
+              </form>
+              
+              <ul class="list-group mt-4" style="border:2px solid gray;" *ngIf="delMessage">
+                <li class="list-group-item">{{delMessage}}</li>
+            </ul>
+          </div>
+      </div>
+      <!-- END card-->
+  </div>
+</div>
+<!-- END row-->
+

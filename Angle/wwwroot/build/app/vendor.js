@@ -1,0 +1,32 @@
+"use strict";
+/* This file is mainly used for importing third party scripts */
+Object.defineProperty(exports, "__esModule", { value: true });
+require("jquery");
+// import './core/wrapper/wrapper.js';
+require("popper.js");
+require("ika.jvectormap/jquery-jvectormap-1.2.2.min.js");
+require("ika.jvectormap/jquery-jvectormap-world-mill-en.js");
+require("ika.jvectormap/jquery-jvectormap-us-mill-en.js");
+require("jquery-sparkline/jquery.sparkline.js");
+require("flot/jquery.flot.js");
+require("flot/jquery.flot.resize.js");
+require("flot/jquery.flot.pie.js");
+require("flot/jquery.flot.time.js");
+require("flot/jquery.flot.categories.js");
+require("jquery.flot.spline/jquery.flot.spline.js");
+require("jquery.flot.tooltip/js/jquery.flot.tooltip.js");
+require("chart.js/dist/Chart.bundle.js");
+require("jqcloud2/dist/jqcloud.js");
+require("summernote/dist/summernote.js");
+require("bootstrap/js/dist/util.js");
+require("bootstrap/js/dist/modal.js");
+require("bootstrap/js/dist/dropdown.js");
+require("bootstrap/js/dist/tooltip.js");
+require("fullcalendar/dist/fullcalendar.js");
+require("jquery-slimscroll/jquery.slimscroll.js");
+require("codemirror/lib/codemirror.js");
+require("codemirror/mode/javascript/javascript.js");
+require("codemirror/mode/xml/xml.js");
+require("codemirror/mode/htmlmixed/htmlmixed.js");
+require("codemirror/mode/css/css.js");
+//# sourceMappingURL=vendor.js.map

@@ -1,0 +1,41 @@
+<div *ngIf="teachers.length>0; else notFound" class="row">
+
+  <div class="col-md-8 offset-2">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Username</th>
+
+      <th scope="col">Name</th>
+      <th scope="col">Education Detail</th>
+      <th scope="col">Personal Detail</th>
+      <th scope="col">Teacher Detail</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let teacher of teachers">
+
+      <td>{{teacher.id}}</td>
+      <td>{{teacher.normalizedUserName}}</td>
+      <td>{{teacher.name}}</td>
+      <td>{{teacher.educationDetail}}</td>
+      <td>{{teacher.personalDetail}}</td>
+      <td> <a class="btn btn-info" [routerLink]="['/admin/teacher/' + teacher.id]">Detail</a>
+      </tr>
+  </tbody>
+</table>
+
+<ng-template #notFound>
+  <div class="alert alert-danger text-center col-md-8 offset-2" role="alert">
+    Teacher Not Found! Please Add Teacher.
+  </div>
+</ng-template>
+
+
+</div>
+</div>
+
+
+
